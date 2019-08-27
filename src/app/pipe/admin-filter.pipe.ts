@@ -5,9 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AdminFilterPipe implements PipeTransform {
 
-  transform(baseArray: any=[], phrase:string="", counter:number) {
+  transform(baseArray: any = [], phrase: string = "", counter: number) {
+    if (!baseArray) {
+      return [];
+    }
 
-    return baseArray.filter( product => {return JSON.stringify(product).toLowerCase().indexOf(phrase.toLowerCase()) > -1})
+
+    return baseArray.filter(product => { return JSON.stringify(product).toLowerCase().indexOf(phrase.toLowerCase()) > -1 })
   }
 
 }
