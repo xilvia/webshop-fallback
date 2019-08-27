@@ -1,0 +1,35 @@
+<h1 class="text-center text-primary">Edit Product</h1>
+
+<form class="text-primary"  (submit)="onUpdate($event)" action="">
+  <div class="form-group">
+    <label for="firstname">name</label>
+    <input [(ngModel)]= "product.name" class=" text-dark  text-dark font-weight-bold form-control"
+           name="name"
+           type="text">
+  </div>
+  <div class="form-group">
+    <label for="type">Type</label>
+    <input [(ngModel)]= "product.type" class=" text-dark font-weight-bold form-control"
+           name="type"
+           type="text">
+  </div>
+  <div class="form-group">
+      <label for="age">Picture</label>
+      <input [(ngModel)]="product.picture" class=" text-dark font-weight-bold form-control"
+      name="picture"
+      type="text">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input [(ngModel)]="product.description" class=" text-dark font-weight-bold form-control"
+        name="description"
+        type="text">
+    </div>
+    <div class="form-group">
+        <label for="color">Color</label>
+        <input [(ngModel)]="product.color" class=" text-dark font-weight-bold form-control"
+        name="color"
+        type="text">
+    </div>
+    <button class=" btn btn-primary">Küldés</button>
+</form>

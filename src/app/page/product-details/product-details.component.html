@@ -25,10 +25,7 @@
         <td>Color</td>
         <td>{{ product.color }}</td>
       </tr>
-      <tr>
-        <td>Price</td>
-        <td>{{ product.price }}</td>
-      </tr>
+      
       <td><button class="btn btn-danger"
                 (click)="addToCart(id)">Add to Cart</button></td>
 
@@ -65,10 +62,7 @@
               <td>Color</td>
               <td>{{ cart[0].color }}</td>
             </tr>
-            <tr>
-              <td>Price</td>
-              <td>{{ cart[0].price }}</td>
-            </tr>
+           
             <tr>
               <td>Items</td>
               <td>{{ counter }}</td>

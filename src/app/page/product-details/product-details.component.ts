@@ -11,9 +11,9 @@ import { OrderService } from 'src/app/service/order.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  
+
   order: Order = {
-    id: 0,
+    idProduct: 0,
     insdate: null,
     product: 0,
     userName: '',
@@ -24,7 +24,7 @@ export class ProductDetailsComponent implements OnInit {
   product: Product;
   counter: number = 0;
   cart: any[];
-  total: number = 0;
+
 
   constructor(
     private router: Router,
@@ -49,14 +49,14 @@ export class ProductDetailsComponent implements OnInit {
       picture: this.product.picture,
       description: this.product.description,
       color: this.product.color,
-      price: this.product.price
+
     }];
 
-    this.order.id = this.product.id;
+    this.order.idProduct = this.product.id;
     console.log(this.cart);
 
     this.counter += 1;
-    this.total = this.counter * this.product.price;
+
   }
 
   removeItem(id: number): void {
@@ -65,11 +65,11 @@ export class ProductDetailsComponent implements OnInit {
     console.log(this.cart.length)
 
     this.counter = 0; // -1 kéne legyen
-    this.total = 0;
+
   }
   onSubmit(ev: Event): void {
     ev.preventDefault();
-    this.order.id = Date.now();
+    //this.order.id = Date.now();
     this.order.product = this.product.id;
     this.order.insdate = new Date();
 
@@ -77,6 +77,7 @@ export class ProductDetailsComponent implements OnInit {
 
     this.orderService.create(this.order).subscribe(
       order => {
+        console.log(order);
         this.router.navigateByUrl("/products")
       }, err => console.error(err)
 

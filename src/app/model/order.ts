@@ -1,5 +1,5 @@
 export class Order {
-    id: number = 0;
+    idProduct: number = 0;
     insdate: Date = new Date();
     product: number = 0;
     userName: string = '';

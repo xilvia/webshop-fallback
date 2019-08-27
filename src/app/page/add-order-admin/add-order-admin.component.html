@@ -1,0 +1,49 @@
+<h1 class="text-center text-primary">Add new Order</h1>
+
+<form class="text-primary"
+      (submit)="onAdd($event)"
+      action="">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input [(ngModel)]="order.userName"
+           class=" text-dark  text-dark font-weight-bold form-control"
+           name="username"
+           type="text">
+  </div>
+  <div class="form-group">
+    <label for="useremail">Useremail</label>
+    <input [(ngModel)]="order.userEmail"
+           class=" text-dark font-weight-bold form-control"
+           name="useremail"
+           type="text">
+  </div>
+  <div class="form-group">
+    <label for="shippingaddress">Shipping Address</label>
+    <input [(ngModel)]="order.shippingAddress"
+           class=" text-dark font-weight-bold form-control"
+           name="shippingaddress"
+           type="text">
+  </div>
+  <div class="form-group">
+    <label for="orderdate">Order Date</label>
+    <input [(ngModel)]="order.insdate"
+           class=" text-dark font-weight-bold form-control"
+           name="orderdate"
+           type="text">
+  </div>
+  <div class="form-group">
+    <label for="product">Product</label>
+    <input [(ngModel)]="order.product"
+           class=" text-dark font-weight-bold form-control"
+           name="product"
+           type="number">
+  </div>
+  <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input [(ngModel)]="order.quantity"
+           class=" text-dark font-weight-bold form-control"
+           name="quantity"
+           type="number">
+  </div>
+  <button class=" btn btn-primary">Add</button>
+</form>
