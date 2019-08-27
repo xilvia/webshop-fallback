@@ -10,7 +10,7 @@ module.exports = class postHandler {
     });
     req.on('end', () => {
       res.end(allData);
-      // dB.add(JSON.parse(allData), reParams[2]).then(newData => res.end(JSON.stringify(newData)));
+      dB.add(JSON.parse(allData), reParams[2]).then(newData => res.end(JSON.stringify(newData)));
     });
   }
 };
