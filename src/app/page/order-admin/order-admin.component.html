@@ -1,17 +1,47 @@
-<pre>
-    {{ list$ | async | json }}
-  </pre>
-  
-  <!-- <table>
-    <thead>
-      <tr>
-        <th>lsdjfsl</th>
-        <th>sldjfsdl</th>
-        <th>dlsjkflskdjf</th>
-        <th>sdljfsdlk</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let order of list$ | async"></tr>
-    </tbody>
-  </table> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">{{ title }}</h1>
+    </div>
+    <div class="form-group col-12">
+      <label for="">Search</label>
+      <input type="text" [(ngModel)]="filterPhrase" class="form-control" placeholder="Search..."
+        aria-describedby="helpId">
+
+    </div>
+    <div class="col-12"><button class="btn btn-success btn-block" routerLink="/add/order">Add</button></div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped ">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>USERNAME</th>
+            <th>USEREMAIL</th>
+            <th>SHIPPINGADDRESS</th>
+            <th>ORDERDATE</th>
+            <th>PRODUCT</th>
+            <th>QUANTITY</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of list$ | async | adminFilter:filterPhrase:counter | deleteFilter:removedId">
+            <!--MIért kell az adminFilterre a counter?-->
+            <td>{{order.id}}</td>
+            <td>{{order.userName}}</td>
+            <td>{{order.userEmail}}</td>
+            <td>{{order.shippingAddress}}</td>
+            <td>{{order.insdate}}</td>
+            <td>{{order.product}}</td>
+            <td>{{order.quantity}}</td>
+            <td><button routerLink="/admin/orders/{{order.id}}" class="btn btn-primary">edit</button></td>
+            <td><button (click)="removeOrder(order.id)" class="btn btn-warning">delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
