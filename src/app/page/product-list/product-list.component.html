@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 class="text-center">Guitars of your choice</h1>
+    <br>
+    <a href="#" > <!--emiatt minden kártyát egy linkként kezel, máshol viszont nem jön ki jól az ngFor. Nem tudom, ezzel mit lehetne kezdeni-->
+        <div class="row ">
+            <div class="col-3" *ngFor="let product of list$ | async">
+                <div class="card" style="width:250px; margin: 10px;">
+                    <img class="card-img-top" src="{{ product.picture }}" alt="{{ product.name}}">
+                    <div class="card-body" style="height: max-content">
+                        <h5 style="color: rgb(252, 165, 3);">{{ product.name}}</h5>
+                        <h6>{{ product.type}}</h6>
+                        <p>{{ product.color}}</p>
+                        <p>{{ product.description}}</p>
+                        <a href="#" class="btn btn-warning" [routerLink]="['/products', product.id]">Check it out!</a>  <!--Ide kell majd bekötni az egyes aloldalak linkjét-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
