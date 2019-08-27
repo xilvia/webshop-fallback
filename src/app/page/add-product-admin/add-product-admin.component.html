@@ -1,21 +1,21 @@
-<h1 class="text-center text-primary">Add new Product</h1>
+<h1 class="text-center">Add new Product</h1>
 
-<form class="text-primary"  (submit)="onAdd($event)" action="">
+<form (submit)="onAdd($event)" action="">
   <div class="form-group">
-    <label for="firstname">name</label>
-    <input [(ngModel)]= "product.name" class=" text-dark  text-dark font-weight-bold form-control"
+    <label for="firstname">Name</label>
+    <input [(ngModel)]= "product.name" class="font-weight-bold form-control"
            name="name"
            type="text">
   </div>
   <div class="form-group">
     <label for="type">Type</label>
-    <input [(ngModel)]= "product.type" class=" text-dark font-weight-bold form-control"
+    <input [(ngModel)]= "product.type" class="font-weight-bold form-control"
            name="type"
            type="text">
   </div>
   <div class="form-group">
-      <label for="age">Picture</label>
-      <input [(ngModel)]="product.picture" class=" text-dark font-weight-bold form-control"
+      <label for="age">Picture link</label>
+      <input [(ngModel)]="product.picture" class="ont-weight-bold form-control"
       name="picture"
       type="text">
     </div>
@@ -31,5 +31,5 @@
         name="color"
         type="text">
     </div>
-    <button class=" btn btn-primary">Küldés</button>
+    <button class=" btn btn-success">Save</button>
 </form>

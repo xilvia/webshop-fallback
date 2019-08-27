@@ -9,6 +9,7 @@ import { ProductAdminComponent } from './page/product-admin/product-admin.compon
 import { EditProductAdminComponent } from './page/edit-product-admin/edit-product-admin.component';
 import { EditOrderAdminComponent } from './page/edit-order-admin/edit-order-admin.component';
 import { AddOrderAdminComponent } from './page/add-order-admin/add-order-admin.component';
+import { AddProductAdminComponent } from './page/add-product-admin/add-product-admin.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'admin/orders', component: OrderAdminComponent },
   { path: 'admin/orders/:id', component: EditOrderAdminComponent },
   { path: 'add/order', component: AddOrderAdminComponent },
+  { path: 'add/product', component: AddProductAdminComponent },
   { path: '**', component: BadurlComponent }
 
 ];

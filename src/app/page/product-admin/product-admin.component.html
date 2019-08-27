@@ -1,43 +1,45 @@
-<div class="container-fluid">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">{{ title }}</h1>
+    </div>
+    <div class="form-group col-12">
+      <label for="">Search</label>
+      <input type="text" [(ngModel)]="filterPhrase" class="form-control" placeholder="Search..."
+        aria-describedby="helpId">
+    </div>
+
+    <div class="col-12"><button class="btn btn-success btn-block" routerLink="/add/product">Add</button></div>
+
     <div class="row">
-        <div class="col-12" >
-        <h1 class="text-center">{{ title }}</h1>
-        </div>
-        <div class="form-group col-12">
-                <label for="">Search</label>
-                <input type="text" [(ngModel)]="filterPhrase" class="form-control" placeholder="Search..." aria-describedby="helpId">
-                
-              </div>
-              <div class="col-12"><button class="btn btn-success btn-block" routerLink ="/add/product">Add</button></div>
+      <div class="col-6">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th (click)="onOrder('id')">#</th>
+              <th (click)="onOrder('name')">NAME</th>
+              <th (click)="onOrder('type')">TYPE</th>
+              <th>PICTURE LINK</th>
+              <th>DESCRIPTION</th>
+              <th (click)="onOrder('color')">COLOR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let product of list$ | async | adminFilter:filterPhrase:counter | deleteFilter:removedId | adminSorter:orderDirection:key">
+              <!--MIért kell az adminFilterre a counter?-->
+              <td>{{product.id}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.type}}</td>
+              <td>{{product.picture}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.color}}</td>
+              <td><button routerLink="/admin/products/{{product.id}}" class="btn btn-primary">edit</button></td>
+              <td><button (click)="removeProduct(product.id)" class="btn btn-warning">delete</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-        <div class="row">
-               <div class="col-12">
-                    <table class="table table-striped ">
-                            <thead>
-                                <tr>
-                                    <th (click) = "onOrder('id')" >#</th>
-                                    <th (click) = "onOrder('name')">NAME</th>
-                                    <th (click) = "onOrder('type')">TYPE</th>
-                                    <th>PICTURE</th>
-                                    <th>DESCRIPTION</th>
-                                    <th (click) = "onOrder('color')">COLOR</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let product of list$ | async | adminFilter:filterPhrase:counter | deleteFilter:removedId | adminSorter:orderDirection:key"> <!--MIért kell az adminFilterre a counter?-->
-                                    <td>{{product.id}}</td>
-                                    <td>{{product.name}}</td>
-                                    <td>{{product.type}}</td>
-                                    <td>{{product.picture}}</td>
-                                    <td>{{product.description}}</td>
-                                    <td>{{product.color}}</td>
-                                    <td><button routerLink= "/admin/products/{{product.id}}" class="btn btn-primary">edit</button></td>
-                                    <td><button  (click)="removeProduct(product.id)" class="btn btn-warning">delete</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-               </div>
-              
-                </div>
-               </div> 
-        
+    </div>
+  </div>
+</div>
