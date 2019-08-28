@@ -5,3 +5,14 @@ h1 {
 .borderless td, .borderless th {
   border: none;
 }
+
+#bckgroundVid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: -100;
+  opacity: 0.1;
+}
