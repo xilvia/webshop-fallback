@@ -9,7 +9,7 @@ import { Order } from 'src/app/model/order';
   styleUrls: ['./order-admin.component.css']
 })
 export class OrderAdminComponent implements OnInit {
-  title: string = "Order DataBase";
+  title: string = "Order Database";
   filterPhrase: string
   removedId: number[] = [];
   counter: number = 0;

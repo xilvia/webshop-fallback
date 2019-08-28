@@ -1,49 +1,52 @@
-<h1 class="text-center text-primary">Add new Order</h1>
+<h1 class="text-center">Add new Order</h1>
 
-<form class="text-primary"
+<form
       (submit)="onAdd($event)"
       action="">
   <div class="form-group">
-    <label for="username">Username</label>
+    <label for="username">User name</label>
     <input [(ngModel)]="order.userName"
-           class=" text-dark  text-dark font-weight-bold form-control"
+    placeholder="Minta Márton"
+           class="font-weight-bold form-control"
            name="username"
            type="text">
   </div>
   <div class="form-group">
-    <label for="useremail">Useremail</label>
+    <label for="useremail">User email</label>
     <input [(ngModel)]="order.userEmail"
-           class=" text-dark font-weight-bold form-control"
+    placeholder="minta.marton@gmail.com"
+           class="font-weight-bold form-control"
            name="useremail"
            type="text">
   </div>
   <div class="form-group">
-    <label for="shippingaddress">Shipping Address</label>
+    <label for="shippingaddress">Shipping address</label>
     <input [(ngModel)]="order.shippingAddress"
-           class=" text-dark font-weight-bold form-control"
+    placeholder="1034 Budapest, Fő utca 5."
+           class="font-weight-bold form-control"
            name="shippingaddress"
            type="text">
   </div>
   <div class="form-group">
-    <label for="orderdate">Order Date</label>
+    <label for="orderdate">Order date</label>
     <input [(ngModel)]="order.insdate"
-           class=" text-dark font-weight-bold form-control"
+           class=" font-weight-bold form-control"
            name="orderdate"
            type="text">
   </div>
   <div class="form-group">
-    <label for="product">Product</label>
+    <label for="product">Product number</label>
     <input [(ngModel)]="order.product"
-           class=" text-dark font-weight-bold form-control"
+           class="font-weight-bold form-control"
            name="product"
            type="number">
   </div>
   <div class="form-group">
     <label for="quantity">Quantity</label>
     <input [(ngModel)]="order.quantity"
-           class=" text-dark font-weight-bold form-control"
+           class="font-weight-bold form-control"
            name="quantity"
            type="number">
   </div>
-  <button class=" btn btn-primary">Add</button>
+  <button class=" btn btn-success btn-block">Add</button>
 </form>
